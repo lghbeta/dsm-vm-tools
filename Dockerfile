@@ -1,11 +1,10 @@
-FROM debian:stretch-slim
+FROM alpine:3.16
 
-RUN apt-get update \
-  && apt-get install -y openssh-client open-vm-tools \
-  && rm -rf /var/lib/apt/lists/*
-
-COPY run.sh /run.sh
 COPY shutdown.sh /sbin/shutdown
+COPY entrypoint.sh /entrypoint.sh
 
-CMD [ "/run.sh" ]
+RUN apk add --no-cache openssh-client open-vm-tools \
+  && ln -sf /sbin/shutdown /sbin/halt \
+  && ln -sf /sbin/shutdown /sbin/reboot
 
+ENTRYPOINT [ "/entrypoint.sh" ]

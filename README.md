@@ -1,4 +1,6 @@
-# docker-xpenology-open-vm-tools
+# dsm-vm-tools
+
+> forked from [yale-wp/docker-xpenology-open-vm-tools](https://github.com/yale-wp/docker-xpenology-open-vm-tools), Based on Alpine reduced image size and modify the shutdown behavior.
 
 This Docker container allows you to run open-vm-tools on a Xpenology DSM running on VMware ESXi.
 
@@ -16,7 +18,22 @@ This Docker container allows you to run open-vm-tools on a Xpenology DSM running
 
 SSH into your DSM and run this command.
 
-```
+```shell
 sudo mkdir /root/.ssh
-sudo docker run -d --restart=always --net=host -v /root/.ssh/:/root/.ssh/ --name open-vm-tools yalewp/xpenology-open-vm-tools
+sudo docker run -d --restart=always --net=host -v /root/.ssh/:/root/.ssh/ --name dsm-vm-tools aniven/dsm-vm-tools
 ```
+
+or via `docker-compose`
+
+```yaml
+version: "3"
+services:
+  vmtools:
+    image: aniven/dsm-vm-tools
+    container_name: vm-tools
+    restart: always
+    volumes:
+      - /root/.ssh:/root/.ssh
+    network_mode: host
+```
+
