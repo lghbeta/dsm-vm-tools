@@ -1,6 +1,6 @@
 # dsm-vm-tools
 
-> forked from [yale-wp/docker-xpenology-open-vm-tools](https://github.com/yale-wp/docker-xpenology-open-vm-tools), Based on Alpine reduced image size and modify the shutdown behavior.
+> forked from [yale-wp/docker-xpenology-open-vm-tools](https://github.com/yale-wp/docker-xpenology-open-vm-tools), Based on Alpine:3.16 reduced image size and modify the shutdown behavior.
 
 This Docker container allows you to run open-vm-tools on a Xpenology DSM running on VMware ESXi.
 
