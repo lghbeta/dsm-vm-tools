@@ -33,5 +33,5 @@ jobs:
           push: true
           tags: |
             aniven/dsm-vm-tools:latest
-            aniven/dsm-vm-tools:12.1.0
+            aniven/dsm-vm-tools:12.5.0
           labels: ${{ steps.meta.outputs.labels }}

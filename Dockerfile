@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM alpine:3
 
 COPY shutdown.sh /sbin/shutdown
 COPY entrypoint.sh /entrypoint.sh
